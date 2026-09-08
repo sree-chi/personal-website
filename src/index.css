@@ -1,0 +1,94 @@
+@import "tailwindcss";
+/* Space Grotesk — body, nav, cards */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+/* Science Gothic — hero display heading */
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wdth,wght@50..200,100..900&display=swap');
+/* Noto Sans Telugu — Telugu script fallback in both stacks */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Deep Cosmos Design Tokens ──────────────── */
+  --cosmos-bg:        #080813;
+  --cosmos-surface:   #111128;
+  --cosmos-elevated:  #1a1a35;
+  --cosmos-border:    #2a2a4a;
+  --cosmos-amber:     #fbbf24;
+  --cosmos-amber-dim: #f59e0b;
+  --cosmos-violet:    #7c3aed;
+  --cosmos-violet-lt: #a78bfa;
+  --cosmos-text:      #f0ede8;
+  --cosmos-muted:     #a8a4c0;
+  --cosmos-subtle:    #6b6890;
+
+  /* Space Grotesk for Latin UI; Noto Sans Telugu catches Telugu glyphs */
+  --sans:    'Space Grotesk', 'Noto Sans Telugu', system-ui, sans-serif;
+  /* Science Gothic for dramatic display text; same Telugu fallback */
+  --display: 'Science Gothic', 'Noto Sans Telugu', system-ui, sans-serif;
+  --mono:    ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: dark;
+  color: var(--cosmos-text);
+  background: var(--cosmos-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  background: #080813;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Hero display name — Science Gothic */
+.hero-display {
+  font-family: var(--display);
+  font-weight: 700;
+  /* Science Gothic variable axes: width=110 for slightly wide, weight=700 */
+  font-variation-settings: 'wdth' 110, 'wght' 700;
+  letter-spacing: 0.01em;
+  color: var(--cosmos-text);
+}
+
+h2 {
+  font-family: var(--sans);
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
